@@ -144,7 +144,18 @@ h1, h2, h3, h4, h5, h6 {
 /* bar (image & text) */
 /**********************/
 .bar {
+  display: block;
   margin: 50px 0;
+}
+.bar.right {
+  display: flex;
+  flex-flow: column;
+}
+.bar.right > div:first-child {
+  order: 1;
+}
+.bar .section {
+  display: block;
 }
 .bar .image {
   margin: 0 auto 20px auto;
@@ -162,6 +173,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   .bar .section .image {
     margin: 0 auto;
+  }
+  .bar.right {
+    flex-flow: inherit;
+  }
+  .bar.right > div:first-child {
+    order: 0;
   }
   .bar.left .section:first-child {
     width: 200px;
@@ -205,6 +222,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   list-style: none;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 /* end footer */
